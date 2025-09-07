@@ -4,8 +4,6 @@ import { Product } from '../types'
 import ProductCard from '../components/ProductCard'
 import Filters from '../components/Filters'
 import SearchBar from '../components/SearchBar'
-import HeroBanner from '../components/HeroBanner'
-
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
@@ -33,56 +31,17 @@ export default function Home() {
   })
 
   return (
-  <div className="mx-auto max-w-7xl px-4 py-8 space-y-8">
-    {/* 🔥 Banner com carrossel */}
-    <HeroBanner />
-
-    {/* 🔥 Seção de benefícios */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center py-6">
-      <div>
-        <span className="text-3xl">🚚</span>
-        <h3 className="font-semibold mt-2">Entrega Rápida</h3>
-        <p className="text-sm text-gray-600">Enviamos para todo o Brasil</p>
-      </div>
-      <div>
-        <span className="text-3xl">💳</span>
-        <h3 className="font-semibold mt-2">Até 6x sem juros</h3>
-        <p className="text-sm text-gray-600">Parcele no cartão de crédito</p>
-      </div>
-      <div>
-        <span className="text-3xl">💸</span>
-        <h3 className="font-semibold mt-2">10% OFF no PIX</h3>
-        <p className="text-sm text-gray-600">Ganhe desconto pagando à vista</p>
-      </div>
-      <div>
-        <span className="text-3xl">🎁</span>
-        <h3 className="font-semibold mt-2">Brinde Exclusivo</h3>
-        <p className="text-sm text-gray-600">Acima de R$249 em compras</p>
-      </div>
-    </div>
-
-    {/* 🔥 Filtros e Produtos (teu código original) */}
-    <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
-      <Filters
-        gender={gender}
-        setGender={setGender}
-        family={family}
-        setFamily={setFamily}
-        origin={origin}
-        setOrigin={setOrigin}
-      />
+    <div className="mx-auto max-w-7xl px-4 py-8 grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
+      <Filters gender={gender} setGender={setGender} family={family} setFamily={setFamily} origin={origin} setOrigin={setOrigin} />
       <div>
         <div className="mb-4 flex items-center justify-between gap-2">
           <SearchBar q={q} setQ={setQ} />
           <div className="text-sm text-neutral-600">{filtered.length} itens</div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filtered.map(p => (
-            <ProductCard key={p.id} product={p} />
-          ))}
+          {filtered.map(p => <ProductCard key={p.id} product={p} />)}
         </div>
       </div>
     </div>
-  </div>
-);
+  )
 }

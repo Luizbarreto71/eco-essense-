@@ -9,9 +9,9 @@ module.exports = {
       },
       colors: {
         brand: {
-          light: "#f3f2ee", // fundo claro
-          dark: "#201d1c",  // preto sofisticado
-          gold: "#c6a253",  // dourado luxo
+          light: '#f3f2ee', // fundo claro
+          dark:  '#201d1c', // preto sofisticado
+          gold:  '#c6a253', // dourado luxo
         },
       },
     },

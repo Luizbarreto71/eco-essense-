@@ -6,6 +6,8 @@ import Filters from "../components/Filters";
 import SearchBar from "../components/SearchBar";
 import HeroBanner from "../components/HeroBanner";
 import CategoriesMenu from "../components/CategoriesMenu";
+import HighlightCarousel from "../components/HighlightCarousel";
+
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -47,6 +49,8 @@ export default function Home() {
     <div className="mx-auto max-w-7xl px-4 py-8 space-y-8">
       {/* 🔥 Banner principal */}
       <HeroBanner />
+      <HighlightCarousel />
+
 
       {/* 🔥 Menu de categorias */}
       <CategoriesMenu />
